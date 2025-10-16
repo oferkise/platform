@@ -26,4 +26,16 @@ namespace platform {
                   << ",\"loc\":\"" << func << ":" << line << "\""
                   << ",\"msg\":\"" << message << "\"}" << std::endl;
     }
+
+    void Logger::enableLevel(LogLevel level) {
+        m_enabledLevels |= (1 << static_cast<int>(level));
+    }
+
+    void Logger::disableLevel(LogLevel level) {
+        m_enabledLevels &= ~(1 << static_cast<int>(level));
+    }
+
+    bool Logger::isLevelEnabled(LogLevel level) const {
+        return (m_enabledLevels & (1 << static_cast<int>(level))) != 0;
+    }
 }

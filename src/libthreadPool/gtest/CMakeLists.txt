@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 # Find GTest
 find_package(GTest REQUIRED)
 
+# Enable CTest
+enable_testing()
+
 # Add test source file
 add_executable(gtestThreadPool gtestThreadPool.cpp)
 
@@ -14,5 +17,3 @@ set_target_properties(gtestThreadPool PROPERTIES CXX_STANDARD 17 CXX_STANDARD_RE
 
 # Add test to CTest
 add_test(NAME gtestThreadPool COMMAND gtestThreadPool)
-# Enable CTest
-enable_testing()

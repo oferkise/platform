@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 add_library(logMsg SHARED
     Logger.cpp
+    LoggerCfg.cpp
 )
 
 target_include_directories(logMsg
@@ -20,6 +21,7 @@ install(TARGETS logMsg
 
 install(FILES
     Logger.h
+    LoggerCfg.h
     DESTINATION include
 )
 

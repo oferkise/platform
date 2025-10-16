@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 add_library(util SHARED
     DateTime.cpp
+    CfgFile.cpp
 )
 
 target_include_directories(util
